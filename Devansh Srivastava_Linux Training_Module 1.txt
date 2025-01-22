@@ -1,0 +1,28 @@
+d_sers@LAPTOP-G5RP63SK:~$ touch myfile
+d_sers@LAPTOP-G5RP63SK:~$ chmod a+x myfile
+d_sers@LAPTOP-G5RP63SK:~$ touch DevanshFile
+d_sers@LAPTOP-G5RP63SK:~$ chmod g-w DevanshFile
+d_sers@LAPTOP-G5RP63SK:~$ mkdir -p directory1/directoryDev
+d_sers@LAPTOP-G5RP63SK:~$ touch directory1/directoryDev/filecreate1
+d_sers@LAPTOP-G5RP63SK:~$ ln -s directory1/directoryDev/filecreate1 directory1/
+d_sers@LAPTOP-G5RP63SK:~$ ps -aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0   1804  1184 ?        Sl   18:17   0:00 /init
+root       111  0.0  0.0   1824    84 ?        Ss   18:18   0:00 /init
+root       112  0.0  0.0   1824   100 ?        S    18:18   0:00 /init
+d_sers     113  0.0  0.1   6068  5196 pts/0    Ss   18:18   0:00 -bash
+d_sers     135  100  0.1   9576  4748 pts/0    R+   18:30   0:00 ps -aux
+d_sers@LAPTOP-G5RP63SK:~$ mkdir directorynew
+d_sers@LAPTOP-G5RP63SK:~$ touch directorynew/file_n1 directorynew/file_n2 directorynew/file_n3
+d_sers@LAPTOP-G5RP63SK:~$ ls -lt directorynew > output_file.txt
+d_sers@LAPTOP-G5RP63SK:~$ ls
+DevanshFile  directory1  directorynew  myfile  output_file.txt
+d_sers@LAPTOP-G5RP63SK:~$ cd directorynew
+d_sers@LAPTOP-G5RP63SK:~/directorynew$ ls
+file_n1  file_n2  file_n3
+d_sers@LAPTOP-G5RP63SK:~/directorynew$ ls -lt
+total 0
+-rw-r--r-- 1 d_sers d_sers 0 Jan 22 18:31 file_n1
+-rw-r--r-- 1 d_sers d_sers 0 Jan 22 18:31 file_n2
+-rw-r--r-- 1 d_sers d_sers 0 Jan 22 18:31 file_n3
+d_sers@LAPTOP-G5RP63SK:~/directorynew$
