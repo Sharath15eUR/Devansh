@@ -1,0 +1,77 @@
+Q1. Use the appropriate command to list all files larger than 1 MB in the current directory and save the output to a file.
+
+d_sers@LAPTOP-G5RP63SK:~$ find . -type f -size +1M > larger_than_1MB_file.txt
+d_sers@LAPTOP-G5RP63SK:~$ ls
+ ASSESMENT1.pdf                                   'Movie Recommendation System.docx'
+'AWS VIVA-VOCE.pptx'                              'Movie Recommendation System.docx:Zone.Identifier'
+'Adobe Scan 22 Oct 2022 (1).pdf'                   Movie_Recommendation_System.docx
+'Adobe Scan 22 Oct 2022 (1).pdf:Zone.Identifier'  'Syllabus(Compiler).pdf'
+'Adobe Scan 22 Oct 2022 (2).pdf'                  'Syllabus(Compiler).pdf:Zone.Identifier'
+'Adobe Scan 22 Oct 2022 (2).pdf:Zone.Identifier'   directory1
+'Chemistry Digital Assignment.pdf'                 directorynew
+'DA 1 .pdf'                                       'file1!MB.txt'
+'DA ASS.pdf'                                       larger_than_1MB_file.txt
+'DA ASS.pdf:Zone.Identifier'                       myfile
+ DevanshFile                                       output_file.txt
+'Industrial Internship Report.pdf'
+d_sers@LAPTOP-G5RP63SK:~$
+
+
+Q2. Replace all occurrences of "localhost" with "127.0.0.1" in a configuration file named config.txt, and save the updated file as updated_config.txt.
+
+
+d_sers@LAPTOP-G5RP63SK:~$ echo -e "server_name=localhost\ndb_host=localhost\napi_url=http://localhost/api\nredis_host=localhost" > config.txt
+d_sers@LAPTOP-G5RP63SK:~$ cat config.txt
+server_name=localhost
+db_host=localhost
+api_url=http://localhost/api
+redis_host=localhost
+d_sers@LAPTOP-G5RP63SK:~$ sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+d_sers@LAPTOP-G5RP63SK:~$ cat updated_config.txt
+server_name=127.0.0.1
+db_host=127.0.0.1
+api_url=http://127.0.0.1/api
+redis_host=127.0.0.1
+d_sers@LAPTOP-G5RP63SK:~$
+
+Q3.Use the appropriate command to search for lines containing the word "ERROR" in a log file but exclude lines containing "DEBUG". Save the results to a file named filtered_log.txt.
+
+d_sers@LAPTOP-G5RP63SK:~$ echo -e "DEBUG: Starting the application initialization.\nERROR: Unable to connect to the database.\nINFO: User 'admin' logged in successfully.\nDEBUG: Fetching configuration settings from the server.\nERROR: DEBUG - Configuration settings could not be applied.\nINFO: Scheduled job 'backup' completed successfully.\nDEBUG: Connection to server timed out. Retrying...\nERROR: Failed to fetch data from API endpoint '/users'.\nINFO: Maintenance mode activated.\nERROR: DEBUG - Query execution failed due to a syntax error.\nDEBUG: Reloading application modules.\nERROR: Missing required parameter in the request.\nINFO: Shutting down the system gracefully.\nDEBUG: Closing unused network connections.\nERROR: DEBUG - Unexpected server response received." > log
+d_sers@LAPTOP-G5RP63SK:~$
+d_sers@LAPTOP-G5RP63SK:~$
+d_sers@LAPTOP-G5RP63SK:~$ cat log
+DEBUG: Starting the application initialization.
+ERROR: Unable to connect to the database.
+INFO: User 'admin' logged in successfully.
+DEBUG: Fetching configuration settings from the server.
+ERROR: DEBUG - Configuration settings could not be applied.
+INFO: Scheduled job 'backup' completed successfully.
+DEBUG: Connection to server timed out. Retrying...
+ERROR: Failed to fetch data from API endpoint '/users'.
+INFO: Maintenance mode activated.
+ERROR: DEBUG - Query execution failed due to a syntax error.
+DEBUG: Reloading application modules.
+ERROR: Missing required parameter in the request.
+INFO: Shutting down the system gracefully.
+DEBUG: Closing unused network connections.
+ERROR: DEBUG - Unexpected server response received.
+d_sers@LAPTOP-G5RP63SK:~$ grep "ERROR" log | grep -v "DEBUG" > filtered_log.txt
+d_sers@LAPTOP-G5RP63SK:~$ cat filtered_log.txt
+ERROR: Unable to connect to the database.
+ERROR: Failed to fetch data from API endpoint '/users'.
+ERROR: Missing required parameter in the request.
+d_sers@LAPTOP-G5RP63SK:~$
+
+
+
+Q4.Write a code to identify the process with the highest memory usage and then terminate it.
+
+d_sers@LAPTOP-G5RP63SK:~$ ps -eo pid,comm,%mem --sort=-%mem | head -n 2 | tail -n 1 | awk '{print $1}' | xargs kill -9
+
+
+Q5.Use the networking tool command and print all the gateway available in a sorted manner
+
+d_sers@LAPTOP-G5RP63SK:~$ ip route | awk '/default/ {print $3}' | sort
+172.18.48.1
+d_sers@LAPTOP-G5RP63SK:~$
+
