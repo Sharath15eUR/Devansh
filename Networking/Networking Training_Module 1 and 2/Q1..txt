@@ -1,0 +1,26 @@
+
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+1. Consider a case, a folder has multiple files and how would copy it to destination
+machine path (Try using SCP, cp options in Linux)
+
+Using cp
+
+d_sers@LAPTOP-G5RP63SK:~$ cp -r  directory1 ~/Networking_Training/
+d_sers@LAPTOP-G5RP63SK:~$ cd Networking_Training/
+d_sers@LAPTOP-G5RP63SK:~/Networking_Training$ ls
+directory1
+d_sers@LAPTOP-G5RP63SK:~/Networking_Training$
+
+
+Using SCP
+
+
+d_sers@LAPTOP-G5RP63SK:~$ scp -r /home/d_sers/directorynew sftp_user@192.168.29.207:C:\Users\sftp_user
+sftp_user@192.168.29.207's password:
+file_n2                                                                     100%    0     0.0KB/s   00:00
+file_n1                                                                     100%    0     0.0KB/s   00:00
+file_n3                                                                     100%    0     0.0KB/s   00:00
+

@@ -1,0 +1,60 @@
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+
+8. Check iwconfig/ifconfig to understand in detail about network interfaces (check about
+interface speed, MTU and other parameters)
+
+Command: iwconfig
+
+d_sers@LAPTOP-G5RP63SK:~$ iwconfig
+lo        no wireless extensions.
+
+bond0     no wireless extensions.
+
+dummy0    no wireless extensions.
+
+tunl0     no wireless extensions.
+
+sit0      no wireless extensions.
+
+eth0      no wireless extensions.
+
+d_sers@LAPTOP-G5RP63SK:~$
+
+Command: if config
+
+
+d_sers@LAPTOP-G5RP63SK:~$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.24.48.99  netmask 255.255.240.0  broadcast 172.24.63.255
+        inet6 fe80::215:5dff:febb:2dd0  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:bb:2d:d0  txqueuelen 1000  (Ethernet)
+        RX packets 24556  bytes 36228072 (36.2 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4011  bytes 287874 (287.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8  bytes 400 (400.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 400 (400.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+Parameters:
+MTU (Maximum Transmission Unit)-It defines max packet size.
+inet-	IPv4 address assigned to the interface.
+inet6-	IPv6 address assigned.
+netmask-Subnet mask.
+broadcast-It tells Broadcast IP address.
+ether-It shows MAC address of the interface.
+RX/TX packets-Number of received (RX) and transmitted (TX) packets.
+
+
+
+
+

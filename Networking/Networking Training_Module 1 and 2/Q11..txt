@@ -1,0 +1,28 @@
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+
+11. Using a terminal, connect to a remote machine via SSH and telnet.
+
+Using SSH
+
+d_sers@LAPTOP-G5RP63SK:~$ ssh sftp_user@192.168.29.207
+sftp_user@192.168.29.207's password:
+sftp_user@LAPTOP-G5RP63SK C:\Users\sftp_user>
+sftp_user@LAPTOP-G5RP63SK C:\Users\sftp_user>exit
+Connection to 192.168.29.207 closed.
+d_sers@LAPTOP-G5RP63SK:~$
+
+
+Using Telnet
+
+d_sers@LAPTOP-G5RP63SK:~$ telnet 192.168.29.207
+Trying 192.168.29.207...
+telnet: Unable to connect to remote host: Connection refused
+d_sers@LAPTOP-G5RP63SK:~$
+
+
+
+
+

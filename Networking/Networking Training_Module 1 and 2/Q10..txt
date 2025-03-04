@@ -1,0 +1,23 @@
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+
+10. Explain how a DHCP server assigns IP addresses to devices in your network.
+
+The Dynamic Host Configuration Protocol (DHCP) is a network management protocol used to automatically assign IP addresses and other network configuration parameters to devices in a network. This eliminates the need for manual IP assignment and ensures efficient IP address management.
+
+How DHCP Works: The Four-Step Process
+
+1.DHCP Discovery:
+	When a device (client) connects to the network, it broadcasts a DHCPDISCOVER message to find a DHCP server.
+	
+DHCP Offer:
+	The DHCP server responds with a DHCPOFFER, which contains an available IP address,subnet mask, default gateway, and DNS server details.
+
+DHCP Request:
+	The client replies with a DHCPREQUEST message to confirm the acceptance of the 	offered IP address.
+
+DHCP Acknowledgment (ACK):
+
+	The DHCP server sends a DHCPACK (acknowledgment), confirming the lease, and the client can now use the assigned IP address.

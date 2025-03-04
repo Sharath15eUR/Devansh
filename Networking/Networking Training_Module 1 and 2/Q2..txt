@@ -1,0 +1,118 @@
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+
+2. Host a FTP and SFTP server and try PUT and GET operations.
+
+
+Using Windows as a FTP server and accessing it with Linux machine
+
+
+d_sers@LAPTOP-G5RP63SK:~$ ftp 192.168.29.207
+Connected to 192.168.29.207.
+220 Microsoft FTP Service
+Name (192.168.29.207:d_sers): ftp-user
+331 Password required
+Password:
+230 User logged in.
+Remote system type is Windows_NT.
+ftp> ls
+227 Entering Passive Mode (192,168,29,207,211,106).
+150 Opening ASCII mode data connection.
+03-04-25  12:58PM                  137 backup_report.log
+03-04-25  12:58PM                   90 config.txt
+03-04-25  12:58PM                 4396 Devansh Srivastava_Linux Training_Module 2.txt.txt
+03-04-25  12:58PM                  148 filtered_log.txt
+03-04-25  12:58PM                  118 larger_than_1MB_file.txt
+03-04-25  12:58PM                  158 output_file.txt
+03-04-25  12:58PM                   90 updated_config.txt
+226 Transfer complete.
+ftp>
+
+
+Using PUT command( uploading output_file.txt to ftp server)
+
+
+ftp> put output_file.txt
+227 Entering Passive Mode (192,168,29,207,211,168).
+125 Data connection already open; Transfer starting.
+226 Transfer complete.
+162 bytes sent in 3.6e-05 seconds (4.29 Mbytes/s)
+ftp> ls
+227 Entering Passive Mode (192,168,29,207,211,169).
+150 Opening ASCII mode data connection.
+03-04-25  12:58PM                  137 backup_report.log
+03-04-25  12:58PM                   90 config.txt
+03-04-25  12:58PM                 4396 Devansh Srivastava_Linux Training_Module 2.txt.txt
+03-04-25  12:58PM                  148 filtered_log.txt
+03-04-25  12:58PM                  118 larger_than_1MB_file.txt
+03-04-25  01:35PM                  162 output_file.txt
+03-04-25  12:58PM                   90 updated_config.txt
+226 Transfer complete.
+ftp>
+
+Using GET command(downloading filtered_log.txt)
+
+ftp> get filtered_log.txt
+227 Entering Passive Mode (192,168,29,207,211,173).
+125 Data connection already open; Transfer starting.
+WARNING! 3 bare linefeeds received in ASCII mode
+File may not have transferred correctly.
+226 Transfer complete.
+148 bytes received in 0.00814 seconds (17.7 kbytes/s)
+ftp>
+
+
+SFTP (Secure File Transfer Protocol)
+
+
+d_sers@LAPTOP-G5RP63SK:~$ sftp sftp_user@192.168.29.207
+sftp_user@192.168.29.207's password:
+Connected to 192.168.29.207.
+sftp> ls
+AppData
+Application Data
+Cookies
+Desktop
+Documents
+Downloads
+Favorites
+Links
+Local Settings
+Music
+My Documents
+NTUSER.DAT
+NTUSER.DAT{fb2d42cd-d8d9-11ef-abbf-f8b22fe171e8}.TM.blf
+NTUSER.DAT{fb2d42cd-d8d9-11ef-abbf-f8b22fe171e8}.TMContainer00000000000000000001.regtrans-ms
+NTUSER.DAT{fb2d42cd-d8d9-11ef-abbf-f8b22fe171e8}.TMContainer00000000000000000002.regtrans-ms
+NetHood
+OneDrive
+Pictures
+PrintHood
+Recent
+Saved Games
+SendTo
+Start Menu
+Templates
+Videos
+ntuser.dat.LOG1
+ntuser.dat.LOG2
+ntuser.ini
+sftp>
+
+
+
+Using PUT command:
+sftp> put config.txt
+Uploading config.txt to /C:/Users/sftp_user/config.txt
+config.txt                                                                  100%   90    34.8KB/s   00:00
+
+
+Using GET command:
+
+sftp> get config.txt
+Fetching /C:/Users/sftp_user/config.txt to config.txt
+config.txt                                                                  100%   90    42.1KB/s   00:00
+sftp>
+

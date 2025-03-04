@@ -1,0 +1,13 @@
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+
+5. Understand what happens when duplicate IPs configured in a network.
+
+
+Answer: When two devices have the same IP:
+		1.Network conflicts occur, causing intermittent connection loss.
+		2.ARP table inconsistencies arise.
+		3.We can use arp -a to check conflicting IPs.
+		4.Resolve by assigning static IPs or enabling DHCP.

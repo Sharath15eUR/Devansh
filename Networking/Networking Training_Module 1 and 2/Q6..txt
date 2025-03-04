@@ -1,0 +1,26 @@
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+
+6. Understand how to access remote system using (VNC viewer, Anydesk, teamviewer
+and remote desktop connections)
+
+VNC on the remote machine.
+Command:
+	sudo apt install tightvncserver
+	vncserver :1
+
+Using AnyDesk/TeamViewer:
+	1.Download and install the software from the official website.
+	2.Open AnyDesk.
+	3.Note down the 9-digit AnyDesk address (displayed in the main window).
+	4.Connect to a Remote Computer
+	5.Ask the remote user for their AnyDesk ID.
+	6.Enter their ID in "Remote Desk" and click Connect.
+	7.The remote user must Accept the connection.
+	9.Once accepted, you get full remote control over their system.
+
+Using Remote Desktop Connection (RDP)
+Command:
+	rdesktop -u username -p password remote_IP

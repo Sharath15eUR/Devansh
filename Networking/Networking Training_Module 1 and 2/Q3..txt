@@ -1,0 +1,92 @@
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+3. Explore with Wireshark/TCP-dump/cisco packet tracer tools and learn about packets
+filters.
+
+Using TCP dump
+
+d_sers@LAPTOP-G5RP63SK:~$ sudo tcpdump -i eth0
+[sudo] password for d_sers:
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+20:36:59.615365 IP LAPTOP-G5RP63SK.mdns > mdns.mcast.net.mdns: 0*- [0q] 1/0/2 PTR LAPTOP-G5RP63SK._dosvc._tcp.local. (192)
+20:36:59.615955 IP6 LAPTOP-G5RP63SK.mdns > ff02::fb.mdns: 0*- [0q] 1/0/2 PTR LAPTOP-G5RP63SK._dosvc._tcp.local. (192)
+20:36:59.617315 IP LAPTOP-G5RP63SK.mdns > mdns.mcast.net.mdns: 0 ANY (QM)? LAPTOP-G5RP63SK._dosvc._tcp.local. (51)
+20:36:59.617851 IP6 LAPTOP-G5RP63SK.mdns > ff02::fb.mdns: 0 ANY (QM)? LAPTOP-G5RP63SK._dosvc._tcp.local. (51)
+20:36:59.694935 IP 172.24.48.99.33459 > LAPTOP-G5RP63SK.domain: 20152+ PTR? 251.0.0.224.in-addr.arpa. (42)
+20:36:59.695750 IP LAPTOP-G5RP63SK.domain > 172.24.48.99.33459: 20152- 1/0/0 PTR mdns.mcast.net. (94)
+20:36:59.695912 IP 172.24.48.99.56333 > LAPTOP-G5RP63SK.domain: 50606+ PTR? 1.48.24.172.in-addr.arpa. (42)
+20:36:59.699025 IP LAPTOP-G5RP63SK.mdns > mdns.mcast.net.mdns: 0 PTR (QM)? 1.48.24.172.in-addr.arpa.local. (48)
+20:36:59.699162 IP6 LAPTOP-G5RP63SK.mdns > ff02::fb.mdns: 0 PTR (QM)? 1.48.24.172.in-addr.arpa.local. (48)
+20:36:59.879172 IP LAPTOP-G5RP63SK.mdns > mdns.mcast.net.mdns: 0 ANY (QM)? LAPTOP-G5RP63SK._dosvc._tcp.local. (51)
+20:36:59.879363 IP6 LAPTOP-G5RP63SK.mdns > ff02::fb.mdns: 0 ANY (QM)? LAPTOP-G5RP63SK._dosvc._tcp.local. (51)
+20:37:00.141994 IP LAPTOP-G5RP63SK.mdns > mdns.mcast.net.mdns: 0 ANY (QM)? LAPTOP-G5RP63SK._dosvc._tcp.local. (51)
+20:37:00.142199 IP6 LAPTOP-G5RP63SK.mdns > ff02::fb.mdns: 0 ANY (QM)? LAPTOP-G5RP63SK._dosvc._tcp.local. (51)
+20:37:00.396652 IP LAPTOP-G5RP63SK.mdns > mdns.mcast.net.mdns: 0*- [0q] 1/0/4 (Cache flush) PTR LAPTOP-G5RP63SK._dosvc._tcp.local. (257)
+
+
+
+Using Wireshark
+
+Frame 2: 1292 bytes on wire (10336 bits), 1292 bytes captured (10336 bits) on interface \Device\NPF_{C4F94B32-8890-4DC6-BA00-C017B802039C}, id 0
+    Section number: 1
+    Interface id: 0 (\Device\NPF_{C4F94B32-8890-4DC6-BA00-C017B802039C})
+        Interface name: \Device\NPF_{C4F94B32-8890-4DC6-BA00-C017B802039C}
+        Interface description: Wi-Fi
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Mar  4, 2025 01:57:47.315603000 India Standard Time
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1741033667.315603000 seconds
+    [Time delta from previous captured frame: 0.000077000 seconds]
+    [Time delta from previous displayed frame: 0.000077000 seconds]
+    [Time since reference or first frame: 0.000077000 seconds]
+    Frame Number: 2
+    Frame Length: 1292 bytes (10336 bits)
+    Capture Length: 1292 bytes (10336 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:quic:tls]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
+Ethernet II, Src: IntelCor_e9:e0:ad (a4:b1:c1:e9:e0:ad), Dst: Serverco_5e:7f:62 (b4:a7:c6:5e:7f:62)
+    Destination: Serverco_5e:7f:62 (b4:a7:c6:5e:7f:62)
+        Address: Serverco_5e:7f:62 (b4:a7:c6:5e:7f:62)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: IntelCor_e9:e0:ad (a4:b1:c1:e9:e0:ad)
+        Address: IntelCor_e9:e0:ad (a4:b1:c1:e9:e0:ad)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.29.207, Dst: 142.250.193.35
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 1278
+    Identification: 0x0e7c (3708)
+    010. .... = Flags: 0x2, Don't fragment
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 128
+    Protocol: UDP (17)
+    Header Checksum: 0x0000 [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 192.168.29.207
+    Destination Address: 142.250.193.35
+User Datagram Protocol, Src Port: 53044, Dst Port: 443
+    Source Port: 53044
+    Destination Port: 443
+    Length: 1258
+    Checksum: 0x3391 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+        [Time since first frame: 0.000077000 seconds]
+        [Time since previous frame: 0.000077000 seconds]
+    UDP payload (1250 bytes)

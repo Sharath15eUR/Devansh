@@ -1,0 +1,40 @@
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+4. Understand linux utility commands like ping, arp (Understand each params from
+ifconfig output)
+
+Ping command
+
+d_sers@LAPTOP-G5RP63SK:~$ ping -c 4 linkedIN.com
+PING linkedIN.com (13.107.42.14) 56(84) bytes of data.
+64 bytes from 13.107.42.14: icmp_seq=1 ttl=114 time=22.3 ms
+64 bytes from 13.107.42.14: icmp_seq=2 ttl=114 time=21.9 ms
+64 bytes from 13.107.42.14: icmp_seq=3 ttl=114 time=24.2 ms
+64 bytes from 13.107.42.14: icmp_seq=4 ttl=114 time=22.4 ms
+
+--- linkedIN.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3156ms
+rtt min/avg/max/mdev = 21.930/22.719/24.188/0.867 ms
+d_sers@LAPTOP-G5RP63SK:~$
+
+Arp command
+
+d_sers@LAPTOP-G5RP63SK:~$ arp -a
+LAPTOP-G5RP63SK (172.24.48.1) at 00:15:5d:e5:5b:93 [ether] on eth0
+d_sers@LAPTOP-G5RP63SK:~$
+
+ifconfig
+
+d_sers@LAPTOP-G5RP63SK:~$ ifconfig eth0
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.24.48.99  netmask 255.255.240.0  broadcast 172.24.63.255
+        inet6 fe80::215:5dff:febb:2dd0  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:bb:2d:d0  txqueuelen 1000  (Ethernet)
+        RX packets 24203  bytes 35838755 (35.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3850  bytes 276253 (276.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+d_sers@LAPTOP-G5RP63SK:~$

@@ -1,0 +1,22 @@
+Name: DEVANSH SRIVASTAVA 
+Registration No:21BCE0527 
+Email-ID: devanshsrivastava840@gmail.com 
+
+7. How to check your default gateway is reachable or not and understand about default
+gateway.
+
+
+d_sers@LAPTOP-G5RP63SK:~$ ip route show | grep default
+default via 172.24.48.1 dev eth0
+d_sers@LAPTOP-G5RP63SK:~$
+
+d_sers@LAPTOP-G5RP63SK:~$ ping -c 4  172.24.48.1
+PING 172.24.48.1 (172.24.48.1) 56(84) bytes of data.
+
+--- 172.24.48.1 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3153ms
+
+d_sers@LAPTOP-G5RP63SK:~$
+
+A default gateway is like the exit door of your network. When your computer wants to communicate with another network (like the internet), it sends data to the default gateway, which then forwards it to the right destination. It connects your local network to external networks (like the internet). It routes data packets correctly when the destination is outside your network.
+
