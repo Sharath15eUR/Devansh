@@ -1,0 +1,59 @@
+
+Name: Devansh Srivastava
+Registration No:21BCE0527
+
+
+
+3.Configure static IP addresses, modify MAC addresses, and verify network connectivity using ping and ifconfig commands.
+
+
+Configuring Static IP address
+d_sers@LAPTOP-G5RP63SK:~$ ifconfig eth0
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.26.248.163  netmask 255.255.240.0  broadcast 172.26.255.255
+        inet6 fe80::215:5dff:fef9:90fa  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:f9:90:fa  txqueuelen 1000  (Ethernet)
+        RX packets 118  bytes 12971 (12.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 9  bytes 726 (726.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+d_sers@LAPTOP-G5RP63SK:~$ sudo ifconfig eth0 172.26.250.150 netmask 255.255.255.0 up
+[sudo] password for d_sers:
+d_sers@LAPTOP-G5RP63SK:~$ ifconfig eth0
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.26.250.150  netmask 255.255.255.0  broadcast 172.26.250.255
+        inet6 fe80::215:5dff:fef9:90fa  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:f9:90:fa  txqueuelen 1000  (Ethernet)
+        RX packets 135  bytes 14985 (14.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 11  bytes 866 (866.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+
+Modifying MAC address
+
+
+d_sers@LAPTOP-G5RP63SK:~$ sudo ifconfig eth0 down
+d_sers@LAPTOP-G5RP63SK:~$ sudo ifconfig eth0 hw ether 00:1A:24:55:7D:8E
+d_sers@LAPTOP-G5RP63SK:~$ sudo ifconfig eth0 up
+d_sers@LAPTOP-G5RP63SK:~$ ifconfig eth0
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.26.250.150  netmask 255.255.255.0  broadcast 172.26.250.255
+        inet6 fe80::21a:24ff:fe55:7d8e  prefixlen 64  scopeid 0x20<link>
+        ether 00:1a:24:55:7d:8e  txqueuelen 1000  (Ethernet)
+        RX packets 145  bytes 16889 (16.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 18  bytes 1492 (1.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+Verifying network connectivity using Ping command
+
+d_sers@LAPTOP-G5RP63SK:~$ ping -c 4 172.26.250.150
+PING 172.26.250.150 (172.26.250.150) 56(84) bytes of data.
+64 bytes from 172.26.250.150: icmp_seq=1 ttl=64 time=0.148 ms
+64 bytes from 172.26.250.150: icmp_seq=2 ttl=64 time=0.058 ms
+64 bytes from 172.26.250.150: icmp_seq=3 ttl=64 time=0.051 ms
+64 bytes from 172.26.250.150: icmp_seq=4 ttl=64 time=0.020 ms
