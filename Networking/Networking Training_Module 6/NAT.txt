@@ -1,0 +1,4 @@
+Explain how NAT would handle Private IP when accessing Internet?
+
+Network Address Translation (NAT) makes devices with private IP addresses visit the internet by interposing as a middleman. 
+When one such device, say with the private IP address of 192.168.1.10, wishes to access the internet, NAT replaces the private IP address with that of the router's public address. In this manner, sites on the external world only read the public address and not internal addresses.Once responses are received, NAT keeps track of which device requested and directs data appropriately.This allows several devices to use one public IP, saves IPv4 addresses, and provides an added layer of security by keeping internal network information from being accessed externally.
